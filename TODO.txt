@@ -1,0 +1,15 @@
+
+1/23/25
+
+Graph of arrested persons is actually ~25 disconnected graphs,
+one per arrest event. Not much to play with. Could write 
+something that looks for any individual that might be 
+present in multiple arrest events? Need some crit for 
+deciding two people are actually the same person.... start
+really broad to see if there's anything at all.
+
+TODO:
+    -run arrested persons social network code with updated
+     db export. 
+    -set up api call so code pulls upto date stuff straight
+     from nodegoat
