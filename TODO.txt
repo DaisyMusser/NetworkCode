@@ -1,4 +1,18 @@
 
+1/24/25
+
+In networkX nodes and edges can be whatever you want...
+ - Could make objects representing ppl be the nodes
+ - and objects representing arrest events be the edges
+
+Use multigraph instead of graph. This allows the same two 
+nodes to be connected by multiple edges. We need this because
+the same people can be arrested together multiple times.
+
+A lot of algorthms don't work on multigraphs. To use these,
+convert back to graph and then run algorithm.
+
+
 1/23/25
 
 Graph of arrested persons is actually ~25 disconnected graphs,
