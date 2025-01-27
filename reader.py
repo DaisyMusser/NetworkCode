@@ -1,5 +1,8 @@
 import pandas as pd
 import networkx as nx
+import matplotlib.pyplot as plt
+import arrest
+import person
 
 # make an empty graph
 G = nx.Graph()
@@ -15,11 +18,16 @@ df['simple_name'] = df['person_name'].str.replace(r' .* ', ' ', regex=True)
 duplicates = df[df['simple_name'].duplicated(keep=False)]
 
 # build graph
-# for each arrest
-# make a graph of everyone in that arrest, connected
-# then combine graphs by merging nodes that represent the same person (probably)
+ids_of_arrests_made = []
+for index, row in df.iterrows():
+    # if there is no arrest object for this id yet, make one
+    if not row['Object_id'] in ids_of_arrests_made:
+        a = arrest.Arrest(row['Object_id'], row['location_id'], row['city_town_village'], row['street'])
+        ids_of_arrests_made.append(row['Object_id'])
+        G.add_node(a)
+    p = person.Person(row['person_name'], row['simple_name'])
+    G.add_node(p)
+    G.add_edge(a, p)
 
-# use this format to add nodes with attributes...
-# G.add_nodes_from([(4, {"color": "red"}), (5, {"color": "green"})])
-
-
+nx.draw(G)
+plt.show()
