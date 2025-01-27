@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Document Version="1">
+  <Source Type="DelimitedText">
+    <DelimitedTextSettings LoadAllColumns="true" SkipLines="0" MaxLines="0" DecimalSeparator="Point" ShowParsingErrors="false" IgnoreQuoting="false" AddColumnsWhenRowsHaveMoreValuesThanHeaders="false" ColumnsDontHaveHeaders="false">
+      <FileDefinition Mode="Single" FileName="C:\Users\quatt\Documents\HistoryJob\py\NetworkCode\struct_data\old_stuff\csv\arrests.0.csv" />
+      <Separator SeparatorType="Comma" />
+      <Encoding EncodingType="UTF8" />
+    </DelimitedTextSettings>
+  </Source>
+  <AnalysisView LayoutMode="Filters" />
+  <Columns>
+    <Column Name="Object_id" Width="80" Format="NoFormat" />
+    <Column Name="person_name" Width="80" Format="NoFormat" />
+    <Column Name="person_id" Width="80" Format="NoFormat" />
+    <Column Name="location_id" Width="80" Format="NoFormat" />
+    <Column Name="name" Width="80" Format="NoFormat" />
+    <Column Name="city_town_village" Width="80" Format="NoFormat" />
+    <Column Name="street" Width="80" Format="NoFormat" />
+    <Column Name="province" Width="80" Format="NoFormat" />
+    <Column Name="country" Width="80" Format="NoFormat" />
+    <Column Name="gis" Width="80" Format="NoFormat" />
+  </Columns>
+  <ExportSettings FileFormat="DelimitedText" FileName="arrests.csv" ExportAllColumns="true">
+    <DelimitedTextOptions DecimalSeparator="Point" WrapTextMode="Auto" DontWriteColumnHeaders="false" DontWriteBom="false">
+      <Separator SeparatorType="Comma" />
+      <Encoding EncodingType="UTF8" />
+    </DelimitedTextOptions>
+  </ExportSettings>
+</Document>
