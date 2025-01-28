@@ -25,21 +25,16 @@ for i, row in df.iterrows():
     G.add_node(p)
     G.add_edge(a, p)
 
-# now traverse the graph and merge duplicate people
-# simple names of every person
-names = [p.simple_name for p in G.nodes if isinstance(p, person.Person)]
-while len(names) > 0:
-    name = names.pop()
-    if name in names:
-        # we have a duplicate
-        # join
+duplicate_rows   = df[df['simple_name'].duplicated(keep=False)]
+duplicate_names  = [row['person_name'] for i, row in duplicate_rows.iterrows()]
+all_people       = [p for p in G.nodes if isinstance(p, person.Person)]
+duplicate_people = [p for p in all_people if p.full_name in duplicate_names]
 
-# duplicates only rows where folks are repeated
-duplicates = df[df['simple_name'].duplicated(keep=False)]
-for i, dup_person in duplicates.iterrows():
-    print(dup_person['person_name'])
+last_dup = False
+for dup in duplicate_people:
+    if last_dup:
+        G = nx.contracted_nodes(G, last_dup, dup)
+    last_dup = dup
 
-'''
 nx.draw(G)
 plt.show()
-'''
