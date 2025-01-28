@@ -36,5 +36,5 @@ for dup in duplicate_people:
         G = nx.contracted_nodes(G, last_dup, dup)
     last_dup = dup
 
-nx.draw(G)
+nx.draw(G, with_labels=True)
 plt.show()
