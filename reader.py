@@ -8,7 +8,7 @@ import person
 G = nx.Graph()
 
 # read csv into df
-df = pd.read_csv('./struct_data/csv/arrests.csv')
+df = pd.read_csv('./struct_data/csv/test.csv')
 
 # add a name column without middle names
 df['simple_name'] = df['person_name'].str.replace(r' .* ', ' ', regex=True)
