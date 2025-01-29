@@ -14,3 +14,7 @@ class Arrest:
         self.city = city
         self.street = street
 
+    # todo: dont use concat
+    def __str__(self):
+        return "Arrest " + str(self.object_id)
+

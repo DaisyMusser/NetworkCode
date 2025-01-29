@@ -12,4 +12,8 @@ class Person:
         self.full_name   = full_name
         self.simple_name = simple_name
 
+    # todo: don't concat! gross
+    def __str__(self):
+        return str(self.simple_name)
+
 
