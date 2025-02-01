@@ -6,6 +6,8 @@ Now arrests are nodes and people are nodes. Edges are not mean
 
 Something is still going wrong when trying to collapse graphs. 
 
+still no nodegoat updates...
+
 
 1/24/25
 
