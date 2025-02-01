@@ -36,13 +36,6 @@ for dup in duplicate_people:
         G = nx.contracted_nodes(G, last_dup, dup)
     last_dup = dup
 
-x = list(nx.connected_components(G))
-y = []
-for sub_g in x:
-    for a_or_p in sub_g:
-        
 
-'''
 nx.draw(G, with_labels=True)
 plt.show()
-'''
