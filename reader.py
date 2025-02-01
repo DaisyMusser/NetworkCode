@@ -30,11 +30,13 @@ duplicate_names  = [row['person_name'] for i, row in duplicate_rows.iterrows()]
 all_people       = [p for p in G.nodes if isinstance(p, person.Person)]
 duplicate_people = [p for p in all_people if p.full_name in duplicate_names]
 
-# this is completely wrong. Blindly combines ppl, it not A A A A its A A A B B A B C
-last_dup = False
-for dup in duplicate_people:
-    # look through graph and find nodes dup to this one, if any
-    # use G = nx.contracted_nodes(G, last_dup, dup) to combine
+while len(duplicate_people) > 0:
+    dup = duplicate_people.pop()
+    for p in G.nodes:
+        if isinstance(p, person.Person):
+            if not dup is p:
+                if dup.simple_name == p.simple_name:
+                    G = nx.contracted_nodes(G, dup, p)
 
 
 nx.draw(G, with_labels=True)
