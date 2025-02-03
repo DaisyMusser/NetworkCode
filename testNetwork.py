@@ -1,10 +1,10 @@
 import unittest
-import reader
+import read
 
 class testNetwork(unittest.TestCase):
 
     def test_reader(self):
-        G = reader.makeGraph('./struct_data/csv/test.csv')
+        G = read.makeGraph('./struct_data/csv/test.csv')
         self.assertEqual(12, len(G.nodes))
         self.assertEqual(10, len(G.edges))
 
