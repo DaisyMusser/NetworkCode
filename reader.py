@@ -41,6 +41,3 @@ def makeGraph(file):
 
     return G
 
-G = makeGraph('./struct_data/csv/test.csv')
-nx.draw(G, with_labels=True)
-plt.show()

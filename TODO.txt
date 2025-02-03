@@ -1,39 +1,9 @@
 
-1/31/25
+2/2/2025
 
-Now arrests are nodes and people are nodes. Edges are not mean
--ingful objects.
+Reader works! It will build a graph of a csv of arrests, where arrests
+are nodes, and people are nodes, and if a person in in an arrest there's
+an edge between that person and that arrest. 
 
-Something is still going wrong when trying to collapse graphs. 
-
-still no nodegoat updates...
-
-
-1/24/25
-
-In networkX nodes and edges can be whatever you want...
- - Could make objects representing ppl be the nodes
- - and objects representing arrest events be the edges
-
-Use multigraph instead of graph. This allows the same two 
-nodes to be connected by multiple edges. We need this because
-the same people can be arrested together multiple times.
-
-A lot of algorthms don't work on multigraphs. To use these,
-convert back to graph and then run algorithm.
-
-
-1/23/25
-
-Graph of arrested persons is actually ~25 disconnected graphs,
-one per arrest event. Not much to play with. Could write 
-something that looks for any individual that might be 
-present in multiple arrest events? Need some crit for 
-deciding two people are actually the same person.... start
-really broad to see if there's anything at all.
-
-TODO:
-    -run arrested persons social network code with updated
-     db export. 
-    -set up api call so code pulls upto date stuff straight
-     from nodegoat
+Next step: visuals. Networkx is not a great options for visualizing 
+graphs. Seek other tools.
